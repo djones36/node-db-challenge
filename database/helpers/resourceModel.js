@@ -11,8 +11,10 @@ function find() {
 
 }
 
-function findById() {
+function findById(id) {
     return db('resources')
+        .where({ id })
+        .first()
 
 }
 
