@@ -13,9 +13,9 @@ exports.seed = function (knex) {
         { projects_id: 2, resources_id: '4' },
         { projects_id: 2, resources_id: '5' },
         { projects_id: 3, resources_id: '1' },
-        { projects_id: 2, resources_id: '3' },
-        { projects_id: 2, resources_id: '4' },
-        { projects_id: 2, resources_id: '6' },
+        { projects_id: 3, resources_id: '3' },
+        { projects_id: 3, resources_id: '4' },
+        { projects_id: 3, resources_id: '6' },
       ]);
     });
 };
