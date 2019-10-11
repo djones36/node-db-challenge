@@ -44,6 +44,8 @@ A relational database is data stored in a table. SQL is the language that allows
 
 - [ ] Why do tables need a `primary key`?
 
+You need a unique identifer for each table which is a primary key.
+
 - [ ] What is the name given to a table column that references the primary key on another table.
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
