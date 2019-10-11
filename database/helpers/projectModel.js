@@ -3,7 +3,7 @@ const db = require('../../database/dbConfig');
 module.exports = {
     find,
     findById,
-    // add
+    add
 }
 function find() {
     return db('projects')
@@ -33,4 +33,10 @@ function findById(id) {
                 return project.completed = false, project
             }
         })
+}
+
+function add(project) {
+    return db('projects')
+        .insert(project, 'id')
+        .then(([id]) => findById(id))
 }

@@ -32,4 +32,13 @@ router.get('/:id', (req, res) => {
         })
 })
 
+//add project
+router.post('/', (req, res) => {
+    const newProject = req.body
+    Projects.add(newProject)
+        .then(project => {
+            res.status(201).json(project)
+        })
+})
+
 module.exports = router
