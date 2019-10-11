@@ -52,7 +52,7 @@ The foreign key.
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
-An intermediary table that some call the step table. 
+An intermediary table that some call the step table or bridge table + foreign keys
 
 ## Minimum Viable Product
 

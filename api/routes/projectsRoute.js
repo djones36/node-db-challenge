@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: "ID could not be found" })
             }
         }).catch(err => {
-            res.status(500).json(err)
+            res.status(500).json(console.log(err), err)
         })
 })
 
@@ -37,7 +37,9 @@ router.post('/', (req, res) => {
     const newProject = req.body
     Projects.add(newProject)
         .then(project => {
-            res.status(201).json(project)
+            res.status(201).json({ message: "success", added: project })
+        }).catch(err => {
+            res.status(500).json(errorRef(err))
         })
 })
 
