@@ -1,13 +1,21 @@
 
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('resources_step')
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('resources_step').insert([
+        { projecct_id: 1, resource_id: '1' },
+        { projecct_id: 1, resource_id: '2' },
+        { projecct_id: 1, resource_id: '6' },
+        { projecct_id: 2, resource_id: '1' },
+        { projecct_id: 2, resource_id: '3' },
+        { projecct_id: 2, resource_id: '4' },
+        { projecct_id: 2, resource_id: '5' },
+        { projecct_id: 3, resource_id: '1' },
+        { projecct_id: 2, resource_id: '3' },
+        { projecct_id: 2, resource_id: '4' },
+        { projecct_id: 2, resource_id: '6' },
       ]);
     });
 };
