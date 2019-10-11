@@ -4,7 +4,7 @@ exports.up = function (knex) {
             //primary key
             tbl.increments()
             //name - required
-            tbl.string('name', 128).notNullable()
+            tbl.string('name', 128).notNullable().unique()
             tbl.text('description', 255)
             //Completed? true or false required
             tbl.boolean('completed').notNullable().defaultTo(false)
@@ -13,7 +13,7 @@ exports.up = function (knex) {
             //PK
             tbl.increments()
             //name - required
-            tbl.string('name', 128).notNullable()
+            tbl.string('name', 128).notNullable().unique()
             tbl.text('description', 255)
         })
         .createTable('tasks', tbl => {

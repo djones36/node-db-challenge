@@ -1,13 +1,16 @@
 
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('resources')
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('resources').insert([
+        { name: 'Computer', description: 'macbook' },
+        { name: 'Textbook', description: 'math book' },
+        { name: 'Money' },
+        { name: 'Rapid Tax', description: 'accounting software' },
+        { name: 'Statements', description: 'bank statements' },
+        { name: 'Paper' },
       ]);
     });
 };
