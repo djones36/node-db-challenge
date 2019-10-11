@@ -21,7 +21,18 @@ function find() {
             return convert
         })
 }
-
+function findById(id) {
+    return db('tasks')
+        .where({ id })
+        .first()
+        .then(task => {
+            if (task.completed === 1) {
+                return task.completed = true, task
+            } else {
+                return task.completed = false, task
+            }
+        })
+}
 
 
 function add(task) {

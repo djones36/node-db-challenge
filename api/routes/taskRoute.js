@@ -14,5 +14,30 @@ router.get('/', (req, res) => {
             })
         })
 })
+//get by id
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+    Tasks.findById(id)
+        .then(task => {
+            if (task) {
+                res.status(200).json(task)
+            } else {
+                res.status(404).json({ message: "ID could not be found" })
+            }
+        }).catch(err => {
+            res.status(500).json(err)
+        })
+})
+
+//add task
+router.post('/', (req, res) => {
+    const newTask = req.body
+    Tasks.add(newTask)
+        .then(task => {
+            res.status(201).json(task)
+        }).catch(err => {
+            res.status(500).json(err)
+        })
+})
 
 module.exports = router
