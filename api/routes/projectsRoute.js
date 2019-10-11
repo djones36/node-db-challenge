@@ -8,10 +8,12 @@ const errorRef = require('../../middleware/errorRef');
 //Get request
 router.get('/', (req, res) => {
     Projects.find()
-        .then(projects => {
-            res.status(200).json(projects)
-        }).catch(error => {
-            res.status(500).json(errorRef(err))
+        .then(project => {
+            res.status(200).json(project)
+        }).catch(err => {
+            res.status(500).json({
+                message: 'failed to get projects'
+            })
         })
 })
 
