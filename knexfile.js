@@ -19,7 +19,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './database/file/bussiness_api.db3',
+      filename: './database/bussiness_api.db3',
     },
     migrations: {
       directory: './database/migrations',
