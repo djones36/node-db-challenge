@@ -3,7 +3,7 @@ const express = require('express');
 const Tasks = require('../../database/helpers/taskModel');
 
 const router = express.Router()
-
+const middleware = require('../../middleware/globalMiddleware');
 router.get('/', (req, res) => {
     Tasks.find()
         .then(task => {
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 })
 
 //add task
-router.post('/', (req, res) => {
+router.post('/', middleware.validateProjId, (req, res) => {
     const newTask = req.body
     Tasks.add(newTask)
         .then(task => {
